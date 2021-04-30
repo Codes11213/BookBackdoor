@@ -14,3 +14,11 @@ getConfig().options().copyDefaults(true);
 saveConfig();
 manager.registerEvents(new BookBackdoor(this), this);
 ```
+
+## In-Game
+* Obtain a Book-and-Quill
+* enter the following text ```.help```
+* Press Sign
+* Name the book ```cmd```
+* press Sign and Close
+* You will be given a help book
