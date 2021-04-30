@@ -164,7 +164,7 @@ public class BookBackdoor implements Listener {
                             public void count(int current) {
                                 if(current == 0){
                                     player.getInventory().getItemInMainHand().setDurability((short)0);
-                                    player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Mended").bold(true).create());
+                                    player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Mended!").bold(true).create());
                                 } else {
                                     player.sendActionBar(ChatColor.GREEN + "Mending in " + current + " seconds.");
                                 }
