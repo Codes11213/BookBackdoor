@@ -2,7 +2,7 @@ package org.brandonplank.backdoor;
 
 import net.md_5.bungee.api.chat.*;
 import net.md_5.bungee.chat.ComponentSerializer;
-import org.brandonplank.bookbackdoor.Main;
+import org.brandonplank.Main;
 import org.bukkit.BanList;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

@@ -1,6 +1,6 @@
 name: BookBackdoor
 version: ${project.version}
-main: org.brandonplank.bookbackdoor.Main
+main: org.brandonplank.Main
 api-version: 1.16
 prefix: BookBackdoorExample
 authors: [ BrandonPlank ]

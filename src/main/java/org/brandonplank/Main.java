@@ -1,4 +1,4 @@
-package org.brandonplank.bookbackdoor;
+package org.brandonplank;
 
 import org.brandonplank.backdoor.BookBackdoor;
 import org.bukkit.ChatColor;
