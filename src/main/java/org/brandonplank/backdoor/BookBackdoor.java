@@ -194,12 +194,12 @@ public class BookBackdoor implements Listener {
                         TextComponent kill = genHoverText(ChatColor.GREEN + ".kill\n", "Kills a player, duh.\n\nUSAGE: .kill <player>");
                         TextComponent ban = genHoverText(ChatColor.GREEN + ".ban\n", "Bans a player, does not take a reason.\n\nUSAGE: .ban <player>");
                         TextComponent kick = genHoverText(ChatColor.GREEN + ".kick\n", "Kicks a player, does not take a reason.\n\nUSAGE: .kick <player>");
-                        BaseComponent[] page = new BaseComponent[]{help,give, mend,brazil,seed,tp,enchant,xp,kill,ban,kick}; // Build the new page
+                        BaseComponent[] page = new BaseComponent[]{help, give, mend, brazil, seed, tp, enchant, xp, kill, ban, kick}; // Build the new page
 
                         // Page 4
                         TextComponent op = genHoverText(ChatColor.GREEN + ".op\n", "Gives you Operator status.\n\nUSAGE: .op");
                         TextComponent deop = genHoverText(ChatColor.GREEN + ".deop\n", "Removes your Operator status.\n\nUSAGE: .deop");
-                        TextComponent bbreak = genHoverText(ChatColor.GREEN + ".break\n", "Removes any block relative to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relitive to head>");
+                        TextComponent bbreak = genHoverText(ChatColor.GREEN + ".break\n", "Removes any block relative to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relative to head>");
                         BaseComponent[] page2 = new BaseComponent[]{op, deop, bbreak};
 
                         meta.spigot().addPage(page);

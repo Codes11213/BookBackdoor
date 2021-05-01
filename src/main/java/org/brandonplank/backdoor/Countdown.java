@@ -11,15 +11,12 @@ public abstract class Countdown {
     protected BukkitTask task;
     protected final Plugin plugin;
 
-
     public Countdown(int time, Plugin plugin) {
         this.time = time;
         this.plugin = plugin;
     }
 
-
     public abstract void count(int current);
-
 
     public final void start() {
         task = new BukkitRunnable() {
@@ -32,5 +29,4 @@ public abstract class Countdown {
 
         }.runTaskTimer(plugin, 0L, 20L);
     }
-
 }
