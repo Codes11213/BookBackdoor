@@ -11,6 +11,16 @@
   Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that logs nothing!
 </p>
 
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#usage">How to</a></li>
+    <li><a href="#roadmap">In game usage</a></li>
+    <li><a href="#contributing">Liability notice</a></li>
+  </ol>
+</details>
+
+
 # How-to
 
 * Youtube link: https://youtu.be/r60HdxPhwy0
