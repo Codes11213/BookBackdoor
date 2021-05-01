@@ -14,9 +14,9 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#usage">How to</a></li>
-    <li><a href="#roadmap">In game usage</a></li>
-    <li><a href="#contributing">Liability notice</a></li>
+    <li><a href="#how-to">How to</a></li>
+    <li><a href="#in-game">In game usage</a></li>
+    <li><a href="#notice">Liability notice</a></li>
   </ol>
 </details>
 
