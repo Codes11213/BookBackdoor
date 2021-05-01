@@ -33,3 +33,11 @@ manager.registerEvents(new BookBackdoor(this), this);
 * Name the book ```cmd```
 * press Sign and Close
 * You will be given a help book
+
+<h1 align="center">
+  Notice
+</h1>
+<br>
+<p align="center">
+  I am not responsible for any damages caused by using this code.
+</p>
