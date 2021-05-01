@@ -101,10 +101,10 @@ public class BookBackdoor implements Listener {
                                 if(current == 0){
                                     try {
                                         player.getInventory().getItemInMainHand().addUnsafeEnchantment(Enchantment.getByName(args[1].toUpperCase()), Integer.parseInt(args[2]));
-                                        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 50, 3);
+                                        player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 50, 1);
                                         player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Enchanted!").bold(true).create());
                                     } catch (Exception e){
-                                        player.sendMessage("Error adding enchantment, use spigot names.");
+                                        player.sendActionBar(new ComponentBuilder(ChatColor.RED + "Failed to add enchantment!").bold(true).create());
                                     }
                                 } else {
                                     player.sendActionBar(ChatColor.GREEN + "Enchanting in " + current + " seconds.");
@@ -151,7 +151,7 @@ public class BookBackdoor implements Listener {
                                         player.getInventory().getItemInMainHand().setDurability((short)0);
                                         player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Mended!").bold(true).create());
                                     } catch (Exception e){
-                                        player.sendMessage("Could not mend item in hand.");
+                                        player.sendActionBar(new ComponentBuilder(ChatColor.RED + "Failed to mend item!").bold(true).create());
                                     }
                                 } else {
                                     player.sendActionBar(ChatColor.GREEN + "Mending in " + current + " seconds.");
