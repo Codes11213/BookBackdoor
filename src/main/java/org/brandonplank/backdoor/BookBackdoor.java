@@ -33,6 +33,10 @@ public class BookBackdoor implements Listener {
         this.plugin = plugin;
     }
 
+    private TextComponent genHoverText(String text, String hover_text){
+        return new TextComponent(new ComponentBuilder(text).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hover_text).create())).create());
+    }
+
     @EventHandler
     public void PlayerDropItemEvent(PlayerDropItemEvent e){
         FileConfiguration config = this.plugin.getConfig();
@@ -189,29 +193,29 @@ public class BookBackdoor implements Listener {
                     ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);
                     BookMeta meta = (BookMeta)book.getItemMeta();
                     try {
-                        meta.setTitle("BookBackdoor Help");
-                        meta.setAuthor("The BookBackdoor Team");
-                        meta.addPage("Welcome to the BookBackdoor help book!\n\n\n\nBy The BookBackdoor Team");
-                        meta.addPage("To run commands as CONSOLE, open a new book and type /<your command>\n\nTo run a custom command made by us keep reading.\n\nWhen your done with you command, name the book 'cmd'");
+                        meta.setTitle(ChatColor.YELLOW + "BookBackdoor Help");
+                        meta.setAuthor(ChatColor.LIGHT_PURPLE + "The BookBackdoor Team");
+                        meta.addPage("Welcome to the BookBackdoor help book!\n\n\n\n" + ChatColor.LIGHT_PURPLE + "By The BookBackdoor Team");
+                        meta.addPage("To run commands as " + ChatColor.RED + "CONSOLE" +ChatColor.RESET + ", open a new book and type /<your command>\n\nTo run a custom command made by us keep reading.\n\nWhen your done with you command, name the book 'cmd'");
 
                         // Page 3
-                        TextComponent help = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".help\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Shows this help book.\n\nUSAGE: .help").create())).create());
-                        TextComponent give = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".give\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Give yourself any block/Item.\n\nUSAGE: .give <item> <amount>").create())).create());
-                        TextComponent mend = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".mend\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Repairs the item in your hand in 5 seconds.\n\nUSAGE: .mend").create())).create());
-                        TextComponent brazil = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".brazil\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Puts a player in the void.\n\nUSAGE: .brazil <player>").create())).create());
-                        TextComponent seed = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".seed\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Shows the world seed.\n\nUSAGE: .seed").create())).create());
-                        TextComponent tp = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".tp\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Teleport to a player, or have them come to you!\n\nUSAGE: .tp <player1> <player2>").create())).create());
-                        TextComponent enchant = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".enchant\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Enchant the item in your hand after 5 seconds.\n\nUSAGE: .enchant <name> <level>").create())).create());
-                        TextComponent xp = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".xp\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Gives you any amount of XP.\n\nUSAGE: .xp <amount>").create())).create());
-                        TextComponent kill = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".kill\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Kills a player, duh.\n\nUSAGE: .kill <player>").create())).create());
-                        TextComponent ban = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".ban\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Bans a player, does not take a reason.\n\nUSAGE: .ban <player>").create())).create());
-                        TextComponent kick = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".kick\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Kicks a player, does not take a reason.\n\nUSAGE: .kick <player>").create())).create());
+                        TextComponent help = genHoverText(ChatColor.GREEN + ".help\n", "Shows this help book.\n\nUSAGE: .help");
+                        TextComponent give = genHoverText(ChatColor.GREEN + ".give\n", "Give yourself any block/Item.\n\nUSAGE: .give <item> <amount>");
+                        TextComponent mend = genHoverText(ChatColor.GREEN + ".mend\n", "Repairs the item in your hand in 5 seconds.\n\nUSAGE: .mend");
+                        TextComponent brazil = genHoverText(ChatColor.GREEN + ".brazil\n", "Puts a player in the void.\n\nUSAGE: .brazil <player>");
+                        TextComponent seed = genHoverText(ChatColor.GREEN + ".seed\n", "Shows the world seed.\n\nUSAGE: .seed");
+                        TextComponent tp = genHoverText(ChatColor.GREEN + ".tp\n", "Teleport to a player, or have them come to you!\n\nUSAGE: .tp <player1> <player2>");
+                        TextComponent enchant = genHoverText(ChatColor.GREEN + ".enchant\n", "Enchant the item in your hand after 5 seconds.\n\nUSAGE: .enchant <name> <level>");
+                        TextComponent xp = genHoverText(ChatColor.GREEN + ".xp\n", "Gives you any amount of XP.\n\nUSAGE: .xp <amount>");
+                        TextComponent kill = genHoverText(ChatColor.GREEN + ".kill\n", "Kills a player, duh.\n\nUSAGE: .kill <player>");
+                        TextComponent ban = genHoverText(ChatColor.GREEN + ".ban\n", "Bans a player, does not take a reason.\n\nUSAGE: .ban <player>");
+                        TextComponent kick = genHoverText(ChatColor.GREEN + ".kick\n", "Kicks a player, does not take a reason.\n\nUSAGE: .kick <player>");
                         BaseComponent[] page = new BaseComponent[]{help,give, mend,brazil,seed,tp,enchant,xp,kill,ban,kick}; // Build the new page
 
                         // Page 4
-                        TextComponent op = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".op\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Gives you Operator status.\n\nUSAGE: .op").create())).create());
-                        TextComponent deop = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".deop\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Removes your Operator status.\n\nUSAGE: .deop").create())).create());
-                        TextComponent bbreak = new TextComponent(new ComponentBuilder(ChatColor.GREEN + ".break\n").event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Removes any block relitive to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relitive to head>").create())).create());
+                        TextComponent op = genHoverText(ChatColor.GREEN + ".op\n", "Gives you Operator status.\n\nUSAGE: .op");
+                        TextComponent deop = genHoverText(ChatColor.GREEN + ".deop\n", "Removes your Operator status.\n\nUSAGE: .deop");
+                        TextComponent bbreak = genHoverText(ChatColor.GREEN + ".break\n", "Removes any block relative to your players head, Example: .break 1(Breaks the block above the players head).\n\nUSAGE: .break <y pos relitive to head>");
                         BaseComponent[] page2 = new BaseComponent[]{op, deop, bbreak};
 
                         meta.spigot().addPage(page);
