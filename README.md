@@ -1,4 +1,11 @@
-# BookBackdoor ![BookBackdoor](https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg)
+<p align="center">
+  <a href="https://github.com/cryptofyre/Apple-Music-Electron">
+    <img src="https://i.imgur.com/xZ4ujZm.png" alt="Logo" width="800" height="122">    
+  </a>
+</p>
+<p align="center">
+![BookBackdoor](https://github.com/BookBackdoor/BookBackdoor/actions/workflows/maven-publish.yml/badge.svg)
+</p>
 
 * Put this in any paper plugin to gain anonymous access to CONSOLE or execute custom build in command that log nothing!
 
